@@ -1,0 +1,51 @@
+<%-include('../partials/header.html')%>
+    <link rel="stylesheet" href="/../../css/admin.css">
+    <title>Issue Book to Customers</title>
+    </head>
+
+    <body>
+
+        <%-include('partials/navbar.html')%>
+            <div class="container-fluid">
+                <div class="row">
+                    <%-include('partials/sidebar.html')%>
+                        <div class="col-md-10 content">
+                            <form method="post">
+                                <div class="input-group mb-5 search-bar">
+                                    <div class="input-group-prepend">
+                                        <label class="input-group-text" for="inputGroupSelect01">Search Customers</label>
+                                    </div>
+                                    <select class="custom-select dropbar" id="inputGroupSelect01" name="searchBy">
+                                        <option selected>by...</option>
+                                        <option value="name">Name</option>
+                                        <option value="phone">Phone</option>
+                                        <option value="email">Email</option>
+                                        <option value="address">Address</option>
+                                        <option value="gender">Gender</option>
+                                    </select>
+                                    <div class="form-inline">
+                                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="word">
+                                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+                                    </div>
+                                </div>
+                            </form>
+                             <h1>Are you sure you want to issue the book to this customer?</h1>
+                            <form method="post">
+                                <div>
+                                    <button type="submit" class="btn btn-primary">Issue Customer</button>
+                                    <br>
+                                </div>
+                            </form>
+                            <br>
+                            <a href="/admin/books/requested"><button class="btn btn-danger">Not sure</button></a>
+                            <div class="">
+                                <% for(var i=0; i< errs.length; i++){ %>
+                                    <%= errs[i].message; %>
+                                    <br>
+                                <% } %>
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+            <%-include('../partials/footer.html')%>

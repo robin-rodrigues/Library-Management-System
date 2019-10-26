@@ -1,0 +1,42 @@
+<%-include('../partials/header.html')%>
+    <link rel="stylesheet" href="/../../css/customer.css">
+    <title>Request New Book</title>
+    </head>
+
+    <body>
+
+        <%-include('partials/navbar.html')%>
+        <div class="container-fluid">
+            <div class="row">
+                <%-include('partials/sidebar.html')%>
+                <div class="col-md-10 content">
+                    <div class="row">
+                        <div class="col-md-11 request-books">
+                            <p class="display-4">Request a New Book</p>
+                            <form class="" method="post">
+                                <h1>Are you sure you want to request this book?</h1>
+                                <div>
+                                    <button type="submit" class="btn btn-primary">Request</button>
+                                </div>
+                            </form>
+                            <br>
+                            <div>
+                                <a href="/customer/books"><button class="btn btn-danger">Not sure yet!</button></a>
+                            </div>
+                            <div class="">
+                                <% for(var i=0; i< errs.length; i++){ %>
+                                    <%= errs[i].message; %>
+                                    <br>
+                                <% } %>
+                                <% for(var i=0; i< success.length; i++){ %>
+                                    <%= success[i].message; %>
+                                    <br>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<%-include('../partials/footer.html')%>
