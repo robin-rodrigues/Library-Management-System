@@ -1,7 +1,7 @@
 var mysql      = require('mysql');
 var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
+  host     : process.env.HOST,
+  user     : process.env.USER,
   password : process.env.PASSWORD,
   database : 'library_management_system'
 });
